@@ -17,7 +17,10 @@
 
   <style>
     :root {
+      color-scheme: light; /* 👈 加上這行，能防止大部分手機瀏覽器惡意強行反色 */
       --pink: #FF6B9D;
+      --pink-light: #FFB3D0;
+--pink: #FF6B9D;
       --pink-light: #FFB3D0;
       --pink-bg: #FFF0F5;
       --purple: #9B59B6;
@@ -91,14 +94,23 @@
       align-items: center;
       gap: 8px;
     }
-
-        /* 請換成這段 */
+    
     .nav-logo-img {
-      height: 38px;       /* 完美匹配導覽列高度，不會讓導覽列變形 */
-      width: auto;        /* 保持 Logo 原本的長寬比例 */
+      height: 46px;       /* 👈 從原本建議的 38px 加大到 46px，更清晰醒目！ */
+      width: auto;        /* 保持原圖長寬比例 */
       object-fit: contain;
       display: block;
+      
+      /* 🌟 終極深色模式救星：給圖片加上一圈「隱形白邊」 */
+      /* 網頁是白色時，這圈白邊會隱形看不見；但當手機強行切換成黑底時， */
+      /* 這圈白邊會自動顯現，像防護罩一樣把黑色的 Logo 文字清晰地襯托出來！ */
+      filter: drop-shadow(1px 0px 0px #ffffff) 
+              drop-shadow(-1px 0px 0px #ffffff) 
+              drop-shadow(0px 1px 0px #ffffff) 
+              drop-shadow(0px -1px 0px #ffffff)
+              drop-shadow(0px 0px 3px rgba(255,255,255,0.8));
     }
+
 
 
     .nav-logo-text {
