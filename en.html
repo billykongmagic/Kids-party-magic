@@ -413,37 +413,49 @@
     }
     
     /* ── GALLERY ── */
+        /* ── GALLERY ── */
     .gallery-section {
       padding: 40px 20px;
       background: var(--pink-bg);
+      overflow: hidden; /* 防止橫向滾動條撐破整個網頁框 */
     }
 
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
+      display: flex; /* 改為橫向排列 */
+      overflow-x: auto; /* 開啟左右滑動功能 */
+      scroll-snap-type: x mandatory; /* 讓滑動時照片能自動停在完美的對齊點 */
+      gap: 12px;
       margin-top: 24px;
+      padding-bottom: 16px; /* 為下方預留一些優雅的呼吸空間 */
+      -webkit-overflow-scrolling: touch; /* 讓 iPhone 瀏覽器滑起來極度絲滑 */
+    }
+
+    /* 隱藏外觀不美觀的瀏覽器預設底線滾動條 */
+    .gallery-grid::-webkit-scrollbar {
+      display: none;
     }
 
     .gallery-grid img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: contain;
-      background: #FFFFFF;
+      flex: 0 0 160px; /* 固定每張照片寬度為 160px */
+      height: 220px; /* 固定相簿高度，建立整齊的卡片牆 */
+      object-fit: cover; /* 稍微裁切以完美填滿精緻的直式卡片 */
+      scroll-snap-align: start;
       border-radius: var(--radius-sm);
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s;
     }
 
     .gallery-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      transform: translateY(-4px); /* 懸停時微微向上浮起 */
     }
 
+    /* 清除舊有的 Grid 放大設定 */
     .gallery-grid img:first-child {
       grid-column: auto;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: auto;
     }
+
 
     /* ── PRICING ── */
     .pricing-section { padding: 40px 20px; }
