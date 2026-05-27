@@ -75,15 +75,15 @@
     .float-wc { background: #07C160; }
     .float-ph { background: var(--pink); }
 
-    /* ── NAV ── */
+        /* ── NAV ── */
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.97); /* 提高不透明度，防止手機深色模式背景變黑 */
       backdrop-filter: blur(10px);
       border-bottom: 2px solid var(--pink-light);
-      padding: 12px 20px;
+      padding: 6px 16px; /* 縮減上下間距，把空間全力留給更大的 Logo */
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -94,30 +94,29 @@
       align-items: center;
       gap: 8px;
     }
-    
+
+    /* ❌ 請把原本的 .nav-logo-icon 刪除，換成下面這段全新的 .nav-logo-img */
     .nav-logo-img {
-      height: 46px;       /* 👈 從原本建議的 38px 加大到 46px，更清晰醒目！ */
-      width: auto;        /* 保持原圖長寬比例 */
+      height: 56px;       /* 👈 從原本的尺寸大幅加高到 56px！如果還嫌小，可以直接改到 60px 或 65px */
+      width: auto;        /* 自動等比例縮放寬度 */
       object-fit: contain;
       display: block;
       
-      /* 🌟 終極深色模式救星：給圖片加上一圈「隱形白邊」 */
-      /* 網頁是白色時，這圈白邊會隱形看不見；但當手機強行切換成黑底時， */
-      /* 這圈白邊會自動顯現，像防護罩一樣把黑色的 Logo 文字清晰地襯托出來！ */
-      filter: drop-shadow(1px 0px 0px #ffffff) 
-              drop-shadow(-1px 0px 0px #ffffff) 
-              drop-shadow(0px 1px 0px #ffffff) 
-              drop-shadow(0px -1px 0px #ffffff)
-              drop-shadow(0px 0px 3px rgba(255,255,255,0.8));
+      /* 🌟 終極深色模式救星：強效版「外發光白邊防護罩」 */
+      /* 就算手機強制把導覽列變成黑底，這段程式碼也會在黑字 Logo 四周圍繞一圈亮眼白芒，絕對看得清！ */
+      filter: drop-shadow(1.5px 0px 0px #ffffff) 
+              drop-shadow(-1.5px 0px 0px #ffffff) 
+              drop-shadow(0px 1.5px 0px #ffffff) 
+              drop-shadow(0px -1.5px 0px #ffffff)
+              drop-shadow(0px 0px 5px rgba(255,255,255,0.95));
     }
 
-
-
     .nav-logo-text {
-      font-size: 16px;
+      font-size: 18px;    /* 文字也稍微放大一點點 */
       font-weight: 700;
       color: var(--pink);
     }
+
 
     .nav-cta {
       background: var(--pink);
