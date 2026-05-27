@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>百樂魔術 親子派對魔術｜澳門生日派對魔術師 Billy Kong</title>
+  <meta name="description" content="澳門親子派對魔術師百樂魔術 Billy Kong，專業兒童生日派對魔術表演。互動魔術、小小魔術師環節、扭氣球、帶領切蛋糕儀式。適合10-60人，MOP$1800起。WhatsApp立即查詢！">
+  <meta name="keywords" content="澳門親子派對魔術,澳門生日派對魔術師,百樂魔術,Billy Kong,兒童魔術表演,澳門小朋友生日派對,派對魔術澳門">
+  <meta name="geo.region" content="MO">
+  <meta name="geo.placename" content="Macau">
+  <meta property="og:title" content="百樂魔術｜澳門親子派對魔術師">
+  <meta property="og:description" content="讓孩子成為今天的魔法師！專業親子派對魔術，MOP$1800起，WhatsApp立即查詢。">
+  <meta property="og:image" content="images/hero.jpeg">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #FF6B9D;
+      --pink-light: #FFB3D0;
+      --pink-bg: #FFF0F5;
+      --purple: #9B59B6;
+      --purple-light: #E8D5F5;
+      --yellow: #FFD93D;
+      --yellow-light: #FFF9E6;
+      --green: #6BCB77;
+      --white: #FFFFFF;
+      --text: #333333;
+      --text-light: #666666;
+      --radius: 20px;
+      --radius-sm: 12px;
+      --shadow: 0 4px 20px rgba(255,107,157,0.15);
+      --shadow-card: 0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: #FFFBFD;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── FLOATING CTA ── */
+    .float-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 16px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .float-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 22px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .float-btn:hover { transform: scale(1.1); }
+    .float-wa { background: #25D366; }
+    .float-wc { background: #07C160; }
+    .float-ph { background: var(--pink); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--pink-light);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--pink);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .nav-logo-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--pink);
+    }
+
+    .nav-cta {
+      background: var(--pink);
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 92vh;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.05) 0%,
+        rgba(0,0,0,0.1) 40%,
+        rgba(255,107,157,0.75) 80%,
+        rgba(255,107,157,0.92) 100%
+      );
+    }
+
+    .hero-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 32px 24px 40px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-title {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .hero-title span { color: var(--yellow); }
+
+    .hero-sub {
+      font-size: 15px;
+      opacity: 0.95;
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    .hero-capacity {
+      display: inline-block;
+      background: rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 20px;
+      font-size: 13px;
+      padding: 4px 14px;
+      margin-bottom: 24px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .hero-btn-main {
+      background: white;
+      color: var(--pink);
+      padding: 13px 28px;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .hero-btn-ghost {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: 2px solid white;
+      padding: 13px 24px;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      padding: 40px 20px;
+      background: var(--pink-bg);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--pink);
+      margin-bottom: 6px;
+    }
+
+    .section-sub {
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 28px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 20px 14px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .feature-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .feature-desc {
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ── CONTENT ── */
+    .content-section {
+      padding: 40px 20px;
+    }
+
+    .content-section.alt {
+      background: var(--yellow-light);
+    }
+
+    .content-section.purple-bg {
+      background: var(--purple-light);
+    }
+
+    /* ── SHOW CONTENT ── */
+    .show-content-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .show-item {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    .show-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .show-item-body {
+      padding: 18px;
+    }
+
+    .show-item-tag {
+      display: inline-block;
+      background: var(--pink-light);
+      color: var(--pink);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+
+    .show-item-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .show-item-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .highlight-text {
+      color: var(--pink);
+      font-weight: 700;
+    }
+
+    /* ── HIGHLIGHTS ── */
+    .highlights-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .highlight-item {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      box-shadow: var(--shadow-card);
+    }
+
+    .highlight-emoji {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .highlight-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--pink);
+    }
+
+    .highlight-body p {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ── VIDEO ── */
+    .video-section {
+      padding: 40px 20px;
+      background: #1a1a2e;
+    }
+
+    .video-section .section-title {
+      color: white;
+    }
+
+    .video-section .section-sub {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(255,107,157,0.3);
+      aspect-ratio: 9/16;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ── GALLERY ── */
+    .gallery-section {
+      padding: 40px 20px;
+      background: var(--pink-bg);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .gallery-grid img:first-child {
+      grid-column: span 2;
+      aspect-ratio: 16/9;
+    }
+
+    /* ── PRICING ── */
+    .pricing-section {
+      padding: 40px 20px;
+    }
+
+    .pricing-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .pricing-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border: 2px solid transparent;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--pink);
+      transform: none;
+    }
+
+    .pricing-header {
+      padding: 18px 20px;
+      background: var(--pink-bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .pricing-card.featured .pricing-header {
+      background: var(--pink);
+      color: white;
+    }
+
+    .pricing-popular {
+      background: var(--yellow);
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 10px;
+    }
+
+    .pricing-name {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .pricing-price {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--pink);
+    }
+
+    .pricing-card.featured .pricing-price {
+      color: white;
+    }
+
+    .pricing-body {
+      padding: 18px 20px;
+    }
+
+    .pricing-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pricing-items li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .pricing-items li::before {
+      content: '✓';
+      width: 22px;
+      height: 22px;
+      background: var(--pink-bg);
+      color: var(--pink);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .pricing-card.featured .pricing-items li::before {
+      background: rgba(255,107,157,0.12);
+    }
+
+    /* ── NOTES ── */
+    .notes-box {
+      background: var(--yellow-light);
+      border: 2px dashed var(--yellow);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .notes-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #b8860b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .notes-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .notes-list li {
+      font-size: 13px;
+      color: var(--text-light);
+      display: flex;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    .notes-list li::before {
+      content: '•';
+      color: var(--yellow);
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .gift-highlight {
+      background: white;
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-top: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      border: 1px solid var(--pink-light);
+    }
+
+    .gift-icon { font-size: 28px; }
+
+    .gift-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--pink);
+      margin-bottom: 2px;
+    }
+
+    .gift-text span {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    /* ── WHY US ── */
+    .why-section {
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #FF6B9D15, #9B59B615);
+    }
+
+    .why-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .why-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+    }
+
+    .why-card-icon { font-size: 36px; margin-bottom: 10px; display: block; }
+    .why-card-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .why-card-desc { font-size: 12px; color: var(--text-light); line-height: 1.6; }
+
+    .why-quote {
+      background: var(--pink);
+      color: white;
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .why-quote p {
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .why-quote strong {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      padding: 40px 20px 60px;
+      background: var(--pink-bg);
+    }
+
+    .contact-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: white;
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s;
+    }
+
+    .contact-card:hover { transform: translateY(-2px); }
+
+    .contact-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+
+    .cc-wa { background: #E8FFF0; }
+    .cc-wc { background: #E8FFF5; }
+    .cc-ph { background: #FFF0F5; }
+
+    .contact-card-body strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .contact-card-body span {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .contact-card-arrow {
+      margin-left: auto;
+      font-size: 18px;
+      color: var(--text-light);
+    }
+
+    .contact-note {
+      background: white;
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-top: 16px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+    }
+
+    .contact-note p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .contact-note strong { color: var(--pink); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #333;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    footer strong { color: white; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .lightbox.active { display: flex; }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating Contact Buttons -->
+<div class="float-cta">
+  <a href="tel:+85366551654" class="float-btn float-ph" aria-label="致電">📞</a>
+  <a href="https://wa.me/85366551654?text=你好，我想查詢親子派對魔術表演！" class="float-btn float-wa" target="_blank" aria-label="WhatsApp">💬</a>
+  <a href="weixin://dl/chat?Billykongmagic" class="float-btn float-wc" aria-label="微信">🟢</a>
+</div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">🎩</div>
+    <span class="nav-logo-text">百樂魔術</span>
+  </div>
+  <a href="#contact" class="nav-cta">立即查詢</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <img src="images/hero.jpeg" alt="澳門親子派對魔術師 Billy Kong 與小朋友互動" class="hero-img" fetchpriority="high">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🎪 澳門專業親子魔術師</div>
+    <h1 class="hero-title">讓孩子成為<br>今天的<span>魔法師</span>✨</h1>
+    <p class="hero-sub">互動魔術 · 歡笑滿場 · 難忘回憶</p>
+    <div class="hero-capacity">👨‍👩‍👧‍👦 適合 10–60 人派對</div>
+    <div class="hero-btns">
+      <a href="#contact" class="hero-btn-main">💬 立即查詢</a>
+      <a href="#pricing" class="hero-btn-ghost">查看收費</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features reveal">
+  <h2 class="section-title">🌟 為什麼選擇我們？</h2>
+  <p class="section-sub">讓每個生日都成為孩子一生的故事</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="feature-icon">🎭</span>
+      <div class="feature-title">專業兒童魔術</div>
+      <div class="feature-desc">為各年齡層精心設計，老少咸宜</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🙌</span>
+      <div class="feature-title">高度互動</div>
+      <div class="feature-desc">邀請小朋友成為「小小魔術師」</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🎁</span>
+      <div class="feature-title">魔術禮物</div>
+      <div class="feature-desc">贈送不可思議的禮物給主角紀念</div>
+    </div>
+  </div>
+</section>
+
+<!-- Show Content -->
+<section class="content-section reveal" id="show">
+  <h2 class="section-title">🎩 表演內容</h2>
+  <p class="section-sub">每場表演都是獨一無二的驚喜</p>
+
+  <div class="show-content-grid">
+    <div class="show-item">
+      <img src="images/g7.jpeg" alt="Billy Kong 親子派對魔術表演現場" loading="lazy">
+      <div class="show-item-body">
+        <span class="show-item-tag">表演內容</span>
+        <div class="show-item-title">吸睛開場 + 互動魔術</div>
+        <p class="show-item-desc">包含吸睛開場及搞笑的互動魔術，適合一家大細齊齊參與。更會邀請派對主角成為 <span class="highlight-text">「小小魔術師」</span> 大顯身手，以神奇的魔術為派對增添歡樂氣氛！</p>
+      </div>
+    </div>
+
+    <div class="show-item">
+      <img src="images/g8.jpeg" alt="Billy Kong 泳池派對魔術表演" loading="lazy">
+      <div class="show-item-body">
+        <span class="show-item-tag">表演形式</span>
+        <div class="show-item-title">小型魔術劇場體驗</div>
+        <p class="show-item-desc">安排觀眾排排坐，在現場形成一個小型魔術劇場，欣賞中距離及近距離魔術表演。不受場地限制，室內室外均可演出。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Show Highlights -->
+<section class="content-section alt reveal">
+  <h2 class="section-title">✨ 表演特色</h2>
+  <p class="section-sub">每個細節都為孩子而設計</p>
+
+  <div class="highlights-list">
+    <div class="highlight-item">
+      <div class="highlight-emoji">👑</div>
+      <div class="highlight-body">
+        <h4>專業兒童魔術</h4>
+        <p>讓孩子成為生日派對中的閃亮主角！設計互動環節，邀請小朋友一起參與魔術，點燃全場歡樂氣氛。</p>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-emoji">🪄</div>
+      <div class="highlight-body">
+        <h4>新一代魔術體驗</h4>
+        <p>打破傳統框架，融合創新手法與震撼視覺，帶來耳目一新的魔法旅程。</p>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-emoji">🎨</div>
+      <div class="highlight-body">
+        <h4>量身定制節目</h4>
+        <p>為學校、機構等活動打造獨一無二的主題魔術表演，完美契合不同需求與場景。</p>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-emoji">🎈</div>
+      <div class="highlight-body">
+        <h4>扭氣球 + 活動主持</h4>
+        <p>魔術師不僅技藝精湛，更擅長扭氣球、帶動氣氛與活動主持，從細節開始為您的活動增添色彩！</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video -->
+<section class="video-section reveal" id="video">
+  <h2 class="section-title">🎬 精彩片段</h2>
+  <p class="section-sub">看看小朋友的真實反應</p>
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube.com/embed/qxlulELWYR0"
+      title="百樂魔術 Billy Kong 親子派對魔術表演"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery-section reveal" id="gallery">
+  <h2 class="section-title">📸 演出精華</h2>
+  <p class="section-sub">每一張都是真實的歡笑與驚喜</p>
+  <div class="gallery-grid">
+    <img src="images/g6.jpeg" alt="Billy Kong 生日派對魔術表演" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="images/img1.jpeg" alt="Billy Kong 與小男孩" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="images/img2.jpeg" alt="Billy Kong 親子魔術" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="images/g1.jpeg" alt="小朋友觀看魔術反應" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="images/g2.jpeg" alt="一家大細開心觀看魔術" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="images/g4.jpeg" alt="小男孩拿魔術道具" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="images/g5.jpeg" alt="Halloween主題派對魔術" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="images/g9.jpeg" alt="Billy Kong 派對魔術" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="images/g10.jpeg" alt="小朋友近距離魔術" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="images/g11.jpeg" alt="扭氣球派對" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="images/g15.jpeg" alt="曉樂生日派對" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="images/g16.jpeg" alt="曉樂生日派對魔術" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="images/g17.jpeg" alt="小朋友生日派對歡笑" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="images/g18.jpeg" alt="派對魔術表演精華" loading="lazy" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing-section reveal" id="pricing">
+  <h2 class="section-title">💰 服務套餐</h2>
+  <p class="section-sub">澳門幣 · 全包服務 · 無隱藏收費</p>
+
+  <div class="pricing-cards">
+
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <div class="pricing-name">半小時套餐</div>
+        <div class="pricing-price">MOP $1,800</div>
+      </div>
+      <div class="pricing-body">
+        <ul class="pricing-items">
+          <li>魔術表演 30 分鐘</li>
+          <li>互動環節 · 全場參與</li>
+          <li>適合較輕鬆的場合</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pricing-card featured">
+      <div class="pricing-header">
+        <div>
+          <div class="pricing-name">1 小時套餐</div>
+        </div>
+        <div>
+          <div class="pricing-popular">最受歡迎 ⭐</div>
+          <div class="pricing-price">MOP $2,000</div>
+        </div>
+      </div>
+      <div class="pricing-body">
+        <ul class="pricing-items">
+          <li>魔術表演 35 分鐘</li>
+          <li>帶領切蛋糕儀式 10 分鐘</li>
+          <li>扭氣球 15 分鐘</li>
+          <li>小小魔術師互動環節</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <div class="pricing-name">1.5 小時套餐</div>
+        <div class="pricing-price">MOP $2,600</div>
+      </div>
+      <div class="pricing-body">
+        <ul class="pricing-items">
+          <li>魔術表演 35 分鐘</li>
+          <li>帶領切蛋糕儀式 10 分鐘</li>
+          <li>扭氣球 45 分鐘</li>
+          <li>適合大型派對 · 更多互動</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="gift-highlight">
+    <div class="gift-icon">🎁</div>
+    <div class="gift-text">
+      <strong>魔術小禮物 · MOP $30 / 份</strong>
+      <span>含魔術小道具一件，現場演示及教學（需提前兩星期訂購）</span>
+    </div>
+  </div>
+
+  <div class="notes-box">
+    <div class="notes-title">📋 特別備注</div>
+    <ul class="notes-list">
+      <li>建議 4 歲以上的小朋友參與</li>
+      <li>表演以廣東話為主；如需英語或普通話表演，另加 MOP $500</li>
+      <li>室外場地及偏遠地點將收取額外費用</li>
+      <li>適合 10–60 人派對</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Why Us Quote -->
+<section class="why-section reveal">
+  <h2 class="section-title">💕 家長這樣說</h2>
+  <p class="section-sub">真實的笑聲是最好的評價</p>
+
+  <div class="why-cards">
+    <div class="why-card">
+      <span class="why-card-icon">🏆</span>
+      <div class="why-card-title">經驗豐富</div>
+      <div class="why-card-desc">多年舞台經驗，靈活應對各種場合，效果有保障</div>
+    </div>
+    <div class="why-card">
+      <span class="why-card-icon">👨‍👩‍👧</span>
+      <div class="why-card-title">闔家共賞</div>
+      <div class="why-card-desc">魔術不只是視覺享受，更是連結情感的歡樂媒介</div>
+    </div>
+    <div class="why-card">
+      <span class="why-card-icon">🙋</span>
+      <div class="why-card-title">高互動性</div>
+      <div class="why-card-desc">讓每位觀眾都有機會參與其中，感受魔法魅力</div>
+    </div>
+    <div class="why-card">
+      <span class="why-card-icon">💝</span>
+      <div class="why-card-title">量身定制</div>
+      <div class="why-card-desc">根據派對主題和孩子喜好，設計專屬表演內容</div>
+    </div>
+  </div>
+
+  <div class="why-quote">
+    <p>孩子的生日一年只有一次，我們理解您希望讓這天變得特別而難忘。我們的魔術廣受家長歡迎，透過參與感滿分的表演，為小主角與來賓創造閃閃發光的回憶。</p>
+    <strong>選擇我們，讓魔法不僅僅是表演，更是滿載歡笑與溫馨的派對體驗！ 🎪</strong>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact-section reveal" id="contact">
+  <h2 class="section-title">📬 立即查詢</h2>
+  <p class="section-sub">告訴我們派對日期，我們為您量身安排！</p>
+
+  <div class="contact-cards">
+    <a href="https://wa.me/85366551654?text=你好！我想查詢親子派對魔術表演，請問有以下日期空檔嗎？" class="contact-card" target="_blank">
+      <div class="contact-card-icon cc-wa">💬</div>
+      <div class="contact-card-body">
+        <strong>WhatsApp 查詢</strong>
+        <span>點擊即可發送訊息</span>
+      </div>
+      <div class="contact-card-arrow">→</div>
+    </a>
+
+    <a href="weixin://dl/chat?Billykongmagic" class="contact-card">
+      <div class="contact-card-icon cc-wc">🟢</div>
+      <div class="contact-card-body">
+        <strong>微信查詢</strong>
+        <span>微信 ID：Billykongmagic</span>
+      </div>
+      <div class="contact-card-arrow">→</div>
+    </a>
+
+    <a href="tel:+85366551654" class="contact-card">
+      <div class="contact-card-icon cc-ph">📞</div>
+      <div class="contact-card-body">
+        <strong>電話查詢</strong>
+        <span>+853 6655 1654</span>
+      </div>
+      <div class="contact-card-arrow">→</div>
+    </a>
+  </div>
+
+  <div class="contact-note">
+    <p>
+      查詢時請告知：<strong>活動日期 · 地點 · 人數 · 主角年齡</strong><br>
+      我們將盡快回覆並為您報價 🎩
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <strong>百樂魔術 Pilot Magic Co. Ltd.</strong><br>
+  澳門親子派對魔術師 · Billy Kong 江尚峰<br>
+  +853 6655 1654 · BillyKongMagic@gmail.com<br>
+  <br>
+  © 2025 百樂魔術 · All Rights Reserved
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+  <img id="lightbox-img" src="" alt="演出照片">
+</div>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Lightbox
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+</script>
+
+</body>
+</html>
