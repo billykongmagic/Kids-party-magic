@@ -480,12 +480,14 @@
       transform: none;
     }
 
-    .pricing-header {
+        .pricing-header {
       padding: 18px 20px;
       background: var(--pink-bg);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap; /* 👈 加上這行，萬一手機螢幕真的太小，它也會優雅地整塊換行，不會重疊錯位 */
+      gap: 8px;        /* 加上間距 */
     }
 
     .pricing-card.featured .pricing-header {
@@ -972,17 +974,19 @@
       </div>
     </div>
 
+        <!-- 💡 修改後的完美對齊寫法 -->
     <div class="pricing-card featured">
+      <!-- 1. 讓熱門標籤單獨在最上面一橫排，不搶空間 -->
+      <div style="background: rgba(0,0,0,0.15); text-align: center; padding: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.05em;">
+        🔥 MOST POPULAR ⭐⭐⭐⭐⭐
+      </div>
+      <!-- 2. 下方的名稱與價格就能像其他卡片一樣完美並排、絕不走位 -->
       <div class="pricing-header">
-        <div>
-          <div class="pricing-name">1-Hour Package</div>
-        </div>
-        <div>
-          <div class="pricing-popular">Most Popular ⭐⭐⭐⭐⭐</div>
-          <div class="pricing-price">MOP $2,000</div>
-        </div>
+        <div class="pricing-name">1-Hour Package</div>
+        <div class="pricing-price">MOP $2,000</div>
       </div>
       <div class="pricing-body">
+
         <ul class="pricing-items">
           <li>35 Minutes Magic Show</li>
           <li>10-Min Cake-Cutting Ceremony Hosting</li>
