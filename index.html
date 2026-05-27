@@ -485,12 +485,16 @@
       transform: none;
     }
 
-    .pricing-header {
+        .pricing-header {
       padding: 18px 20px;
       background: var(--pink-bg);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap; /* 👈 加上這行 */
+      gap: 8px;        /* 👈 加上這行 */
+    }
+
     }
 
     .pricing-card.featured .pricing-header {
@@ -991,17 +995,19 @@
       </div>
     </div>
 
+    <!-- 💡 修改後的中文版完美對齊寫法 -->
     <div class="pricing-card featured">
+      <!-- 1. 讓最受歡迎標籤單獨在最上面一橫排 -->
+      <div style="background: rgba(0,0,0,0.15); text-align: center; padding: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; color: white;">
+        🔥 最受歡迎 ⭐⭐⭐⭐⭐
+      </div>
+      <!-- 2. 下方的名稱與價格完美並排，絕不走位 -->
       <div class="pricing-header">
-        <div>
-          <div class="pricing-name">1 小時套餐</div>
-        </div>
-        <div>
-          <div class="pricing-popular">最受歡迎⭐⭐⭐⭐⭐</div>
-          <div class="pricing-price">MOP $2,000</div>
-        </div>
+        <div class="pricing-name">1小時套餐</div>
+        <div class="pricing-price">MOP $2,000</div>
       </div>
       <div class="pricing-body">
+
         <ul class="pricing-items">
           <li>魔術表演 35 分鐘</li>
           <li>帶領切蛋糕儀式 10 分鐘</li>
