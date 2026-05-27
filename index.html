@@ -411,7 +411,7 @@
       height: 100%;
       border: none;
     }
-
+    
     /* ── GALLERY ── */
     .gallery-section {
       padding: 40px 20px;
@@ -420,28 +420,31 @@
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      grid-template-columns: repeat(3, 1fr); /* 核心：從 2 欄改成 3 欄，相片自然縮小 */
+      gap: 8px; /* 縮小間距更精緻 */
       margin-top: 24px;
     }
 
     .gallery-grid img {
       width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
+      aspect-ratio: 1 / 1; /* 改為 1:1 正方形，像 IG 牆一樣整齊 */
+      object-fit: cover; /* 自動裁切填滿格子，保持畫面平整 */
       border-radius: var(--radius-sm);
       cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .gallery-grid img:hover {
-      transform: scale(1.02);
+      transform: scale(1.05);
       box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
 
+    /* 取消原本第一張相片放大兩倍的設定，讓所有縮圖大小一致 */
     .gallery-grid img:first-child {
-      grid-column: span 2;
-      aspect-ratio: 16/9;
+      grid-column: auto;
+      aspect-ratio: 1 / 1;
+    }
+
     }
 
     /* ── PRICING ── */
