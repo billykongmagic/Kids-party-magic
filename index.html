@@ -92,16 +92,14 @@
       gap: 8px;
     }
 
-    .nav-logo-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--pink);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
+        /* 請換成這段 */
+    .nav-logo-img {
+      height: 38px;       /* 完美匹配導覽列高度，不會讓導覽列變形 */
+      width: auto;        /* 保持 Logo 原本的長寬比例 */
+      object-fit: contain;
+      display: block;
     }
+
 
     .nav-logo-text {
       font-size: 16px;
@@ -809,11 +807,11 @@
 
 <nav>
   <div class="nav-logo">
-    <div class="nav-logo-icon">🎩</div>
-    <span class="nav-logo-text">百樂魔術</span>
+    <img src="images/logo.png" alt="百樂魔術 Logo" class="nav-logo-img">
   </div>
   <a href="#contact" class="nav-cta">立即查詢</a>
 </nav>
+
 
 <section class="hero">
   <img src="images/1.jpg" alt="澳門親子派對魔術師 Billy Kong 與小朋友互動" class="hero-img" fetchpriority="high">
