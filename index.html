@@ -34,7 +34,10 @@
       --radius: 20px;
       --radius-sm: 12px;
       --shadow: 0 4px 20px rgba(255,107,157,0.15);
-      --shadow-card: 0 8px 30px rgba(0,0,0,0.08);
+      --shadow-card: 0 8px 30px rgba(0,0,0,0.08);    
+      .nav-right-box { display: flex; align-items: center; gap: 12px; }
+    .lang-switch { font-size: 13px; color: var(--text-light); text-decoration: none; font-weight: 500; }
+    .lang-switch:hover { color: var(--pink); }
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -820,8 +823,12 @@
 <nav>
   <div class="nav-logo">
     <img src="images/logo.png" alt="百樂魔術 Logo" class="nav-logo-img">
+    <span class="nav-logo-text">百樂魔術</span>
   </div>
-  <a href="#contact" class="nav-cta">立即查詢</a>
+  <div class="nav-right-box">
+    <a href="en.html" class="lang-switch">English</a>
+    <a href="#contact" class="nav-cta">立即查詢</a>
+  </div>
 </nav>
 
 
