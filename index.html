@@ -410,38 +410,39 @@
       border: none;
     }
     
-        /* ── GALLERY ── */
+           /* ── GALLERY ── */
     .gallery-section {
       padding: 40px 20px;
       background: var(--pink-bg);
     }
 
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 改為 3 欄縮小顯示 */
-      gap: 8px;
+      column-count: 2; /* 在手機畫面上自動分成流暢的 2 欄 */
+      column-gap: 10px; /* 欄位之間的左右間距 */
       margin-top: 24px;
     }
 
     .gallery-grid img {
       width: 100%;
-      aspect-ratio: 1 / 1; /* 建立一個固定的正方形縮圖外框 */
-      object-fit: contain; /* 關鍵：完全保留原始比例縮小，絕不裁剪 */
-      background: #FFFFFF; /* 如果照片太直或太橫，旁邊空出的地方會顯示純白底色 */
+      height: auto; /* 核心：完全解除固定高度，讓照片還原真實比例 */
+      display: block;
+      margin-bottom: 10px; /* 每張照片上下的網格間距 */
+      break-inside: avoid; /* 防止圖片在排版時被截斷破碎 */
       border-radius: var(--radius-sm);
       cursor: pointer;
+      box-shadow: var(--shadow-card);
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .gallery-grid img:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
       box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
 
-    /* 取消第一張放大的設定 */
+    /* 徹底清除舊有的 Grid 與第一張放大設定 */
     .gallery-grid img:first-child {
       grid-column: auto;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: auto;
     }
 
 
