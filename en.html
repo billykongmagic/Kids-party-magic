@@ -1116,7 +1116,7 @@
   </div>
 </section>
 
-<!-- FAQ Custom Styles -->
+<!-- FAQ 專屬美化樣式 -->
 <style>
   .faq-category {
       font-size: 16px;
@@ -1136,13 +1136,14 @@
       transition: all 0.3s ease;
       box-shadow: 0 2px 8px rgba(0,0,0,0.02);
   }
-  /* Style when open */
+  /* 當該問題被打開時的樣式 */
   .faq-item[open] {
       border-color: var(--pink);
       box-shadow: var(--shadow);
   }
   .faq-question {
-      padding: 16px 20px;
+      /* 💡 核心修正：右邊內縮加大到 50px，確保文字絕對不會壓到加號 */
+      padding: 16px 50px 16px 20px; 
       font-size: 15px;
       font-weight: 700;
       cursor: pointer;
@@ -1153,7 +1154,7 @@
   .faq-question::-webkit-details-marker {
       display: none;
   }
-  /* Plus icon */
+  /* 右側 ＋ 號 */
   .faq-question::after {
       content: '＋';
       position: absolute;
@@ -1164,7 +1165,7 @@
       font-weight: normal;
       transition: transform 0.3s ease;
   }
-  /* Minus icon when open */
+  /* 打開時變 － 號 */
   .faq-item[open] .faq-question::after {
       content: '－';
       color: var(--pink);
@@ -1184,6 +1185,7 @@
       margin-bottom: 0;
   }
 </style>
+
 <!-- ==================== FAQ Section End ==================== -->
 
 <section class="why-section reveal">
