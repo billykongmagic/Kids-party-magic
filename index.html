@@ -14,14 +14,12 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-<meta name="google-site-verification" content="swGx1BYdssErz1pbeR2jsYgmnHGrefChIDedp7_vA9k" />
+  <meta name="google-site-verification" content="swGx1BYdssErz1pbeR2jsYgmnHGrefChIDedp7_vA9k" />
   
   <style>
     :root {
-      color-scheme: light; /* 👈 加上這行，能防止大部分手機瀏覽器惡意強行反色 */
+      color-scheme: light; /* 防止大部分手機瀏覽器惡意強行反色 */
       --pink: #FF6B9D;
-      --pink-light: #FFB3D0;
---pink: #FF6B9D;
       --pink-light: #FFB3D0;
       --pink-bg: #FFF0F5;
       --purple: #9B59B6;
@@ -36,10 +34,11 @@
       --radius-sm: 12px;
       --shadow: 0 4px 20px rgba(255,107,157,0.15);
       --shadow-card: 0 8px 30px rgba(0,0,0,0.08);    
-      .nav-right-box { display: flex; align-items: center; gap: 12px; }
+    }
+    
+    .nav-right-box { display: flex; align-items: center; gap: 12px; }
     .lang-switch { font-size: 13px; color: var(--text-light); text-decoration: none; font-weight: 500; }
     .lang-switch:hover { color: var(--pink); }
-    }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -69,7 +68,7 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      font-size: 22px;
+      color: white;
       box-shadow: 0 4px 16px rgba(0,0,0,0.2);
       transition: transform 0.2s;
     }
@@ -79,7 +78,7 @@
     .float-wc { background: #07C160; }
     .float-ph { background: var(--pink); }
 
-        /* ── NAV ── */
+    /* ── NAV ── */
     nav {
       position: sticky;
       top: 0;
@@ -99,15 +98,13 @@
       gap: 8px;
     }
 
-    /* ❌ 請把原本的 .nav-logo-icon 刪除，換成下面這段全新的 .nav-logo-img */
     .nav-logo-img {
-      height: 56px;       /* 👈 從原本的尺寸大幅加高到 56px！如果還嫌小，可以直接改到 60px 或 65px */
+      height: 56px;       /* 從原本的尺寸大加高到 56px */
       width: auto;        /* 自動等比例縮放寬度 */
       object-fit: contain;
       display: block;
       
-      /* 🌟 終極深色模式救星：強效版「外發光白邊防護罩」 */
-      /* 就算手機強制把導覽列變成黑底，這段程式碼也會在黑字 Logo 四周圍繞一圈亮眼白芒，絕對看得清！ */
+      /* 終極深色模式救星：強效版「外發光白邊防護罩」 */
       filter: drop-shadow(1.5px 0px 0px #ffffff) 
               drop-shadow(-1.5px 0px 0px #ffffff) 
               drop-shadow(0px 1.5px 0px #ffffff) 
@@ -116,11 +113,10 @@
     }
 
     .nav-logo-text {
-      font-size: 18px;    /* 文字也稍微放大一點點 */
+      font-size: 18px;    
       font-weight: 700;
       color: var(--pink);
     }
-
 
     .nav-cta {
       background: var(--pink);
@@ -170,15 +166,18 @@
     }
 
     .hero-badge {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       background: var(--yellow);
       color: var(--text);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      padding: 4px 14px;
+      padding: 5px 14px;
       border-radius: 20px;
       margin-bottom: 12px;
       letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
     .hero-title {
@@ -248,6 +247,7 @@
       font-weight: 700;
       color: var(--pink);
       margin-bottom: 6px;
+      letter-spacing: 0.05em;
     }
 
     .section-sub {
@@ -272,9 +272,11 @@
     }
 
     .feature-icon {
-      font-size: 32px;
+      color: var(--pink);
       margin-bottom: 10px;
-      display: block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .feature-title {
@@ -374,9 +376,10 @@
       box-shadow: var(--shadow-card);
     }
 
-    .highlight-emoji {
-      font-size: 28px;
+    .highlight-icon {
+      color: var(--pink);
       flex-shrink: 0;
+      display: inline-flex;
     }
 
     .highlight-body h4 {
@@ -425,7 +428,7 @@
       border: none;
     }
     
-           /* ── GALLERY ── */
+    /* ── GALLERY ── */
     .gallery-section {
       padding: 40px 20px;
       background: var(--pink-bg);
@@ -439,7 +442,7 @@
 
     .gallery-grid img {
       width: 100%;
-      height: auto; /* 核心：完全解除固定高度，讓照片還原真實比例 */
+      height: auto; /* 完全解除固定高度，讓照片還原真實比例 */
       display: block;
       margin-bottom: 10px; /* 每張照片上下的網格間距 */
       break-inside: avoid; /* 防止圖片在排版時被截斷破碎 */
@@ -459,7 +462,6 @@
       grid-column: auto;
       aspect-ratio: auto;
     }
-
 
     /* ── PRICING ── */
     .pricing-section {
@@ -486,29 +488,19 @@
       transform: none;
     }
 
-        .pricing-header {
+    .pricing-header {
       padding: 18px 20px;
       background: var(--pink-bg);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap; /* 👈 加上這行 */
-      gap: 8px;        /* 👈 加上這行 */
+      flex-wrap: wrap; 
+      gap: 8px;        
     }
-
 
     .pricing-card.featured .pricing-header {
       background: var(--pink);
       color: white;
-    }
-
-    .pricing-popular {
-      background: var(--yellow);
-      color: var(--text);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 10px;
     }
 
     .pricing-name {
@@ -616,7 +608,11 @@
       border: 1px solid var(--pink-light);
     }
 
-    .gift-icon { font-size: 28px; }
+    .gift-icon-box {
+      color: var(--pink);
+      display: inline-flex;
+      flex-shrink: 0;
+    }
 
     .gift-text strong {
       display: block;
@@ -652,7 +648,14 @@
       box-shadow: var(--shadow-card);
     }
 
-    .why-card-icon { font-size: 36px; margin-bottom: 10px; display: block; }
+    .why-card-icon {
+      color: var(--pink);
+      margin-bottom: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
     .why-card-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
     .why-card-desc { font-size: 12px; color: var(--text-light); line-height: 1.6; }
 
@@ -711,13 +714,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
       flex-shrink: 0;
     }
 
-    .cc-wa { background: #E8FFF0; }
-    .cc-wc { background: #E8FFF5; }
-    .cc-ph { background: #FFF0F5; }
+    .cc-wa { background: #E8FFF0; color: #25D366; }
+    .cc-wc { background: #E8FFF5; color: #07C160; }
+    .cc-ph { background: #FFF0F5; color: var(--pink); }
 
     .contact-card-body strong {
       display: block;
@@ -755,7 +757,7 @@
     .contact-note strong { color: var(--pink); }
 
     /* ── FOOTER ── */
-    `footer {
+    footer {
       background: #333;
       color: rgba(255,255,255,0.7);
       text-align: center;
@@ -792,7 +794,6 @@
       top: 20px;
       right: 20px;
       color: white;
-      font-size: 32px;
       cursor: pointer;
       width: 44px;
       height: 44px;
@@ -819,9 +820,15 @@
 <body>
 
 <div class="float-cta">
-  <a href="tel:+85366551654" class="float-btn float-ph" aria-label="致電">📞</a>
-  <a href="https://wa.me/85366551654?text=你好，我想查詢親子派對魔術表演！" class="float-btn float-wa" target="_blank" aria-label="WhatsApp">💬</a>
-  <a href="weixin://dl/chat?Billykongmagic" class="float-btn float-wc" aria-label="微信">🟢</a>
+  <a href="tel:+85366551654" class="float-btn float-ph" aria-label="致電">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+  </a>
+  <a href="https://wa.me/85366551654?text=你好，我想查詢親子派對魔術表演！" class="float-btn float-wa" target="_blank" aria-label="WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+  </a>
+  <a href="weixin://dl/chat?Billykongmagic" class="float-btn float-wc" aria-label="微信">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+  </a>
 </div>
 
 <nav>
@@ -839,33 +846,39 @@
   <img src="images/1.jpg" alt="澳門親子派對魔術師 Billy Kong 與小朋友互動" class="hero-img" fetchpriority="high">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge">🎪 澳門專業親子魔術師</div>
-    <h1 class="hero-title">讓孩子成為<br>今天的<span>魔法師</span>✨</h1>
+    <div class="hero-badge">澳門專業親子魔術師</div>
+    <h1 class="hero-title">讓孩子成為<br>今天的<span>魔法師</span></h1>
     <p class="hero-sub">互動魔術 · 歡笑滿場 · 難忘回憶</p>
-    <div class="hero-capacity">👨‍👩‍👧‍👦 適合 10–60 人派對</div>
+    <div class="hero-capacity">適合 10–60 人派對</div>
     <div class="hero-btns">
-      <a href="#contact" class="hero-btn-main">💬 立即查詢</a>
+      <a href="#contact" class="hero-btn-main">立即查詢</a>
       <a href="#pricing" class="hero-btn-ghost">查看收費</a>
     </div>
   </div>
 </section>
 
 <section class="features reveal">
-  <h2 class="section-title">🌟 為什麼選擇我們？</h2>
+  <h2 class="section-title">為什麼選擇我們？</h2>
   <p class="section-sub">讓每個生日都成為孩子一生的故事</p>
   <div class="features-grid">
     <div class="feature-card">
-      <span class="feature-icon">🎭</span>
+      <span class="feature-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 6v6l4 2"></path></svg>
+      </span>
       <div class="feature-title">專業兒童魔術</div>
       <div class="feature-desc">為各年齡層精心設計，老少咸宜</div>
     </div>
     <div class="feature-card">
-      <span class="feature-icon">🙌</span>
+      <span class="feature-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      </span>
       <div class="feature-title">高度互動</div>
       <div class="feature-desc">邀請小朋友成為「小小魔術師」</div>
     </div>
     <div class="feature-card">
-      <span class="feature-icon">🎁</span>
+      <span class="feature-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+      </span>
       <div class="feature-title">魔術禮物</div>
       <div class="feature-desc">贈送不可思議的禮物給主角紀念</div>
     </div>
@@ -873,7 +886,7 @@
 </section>
 
 <section class="content-section reveal" id="show">
-  <h2 class="section-title">🎩 表演內容</h2>
+  <h2 class="section-title">表演內容</h2>
   <p class="section-sub">每場表演都是獨一無二的驚喜</p>
 
   <div class="show-content-grid">
@@ -898,33 +911,41 @@
 </section>
 
 <section class="content-section alt reveal">
-  <h2 class="section-title">✨ 表演特色</h2>
+  <h2 class="section-title">表演特色</h2>
   <p class="section-sub">每個細節都為孩子而設計</p>
 
   <div class="highlights-list">
     <div class="highlight-item">
-      <div class="highlight-emoji">👑</div>
+      <div class="highlight-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+      </div>
       <div class="highlight-body">
         <h4>專業兒童魔術</h4>
         <p>讓孩子成為生日派對中的閃亮主角！設計互動環節，邀請小朋友一起參與魔術，點燃全場歡樂氣氛。</p>
       </div>
     </div>
     <div class="highlight-item">
-      <div class="highlight-emoji">🪄</div>
+      <div class="highlight-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M2 22l14-14"></path></svg>
+      </div>
       <div class="highlight-body">
         <h4>新一代魔術體驗</h4>
         <p>打破傳統框架，融合創新手法與震撼視覺，帶來耳目一新的魔法旅程。</p>
       </div>
     </div>
     <div class="highlight-item">
-      <div class="highlight-emoji">🎨</div>
+      <div class="highlight-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 8v8"></path><path d="M8 12h8"></path></svg>
+      </div>
       <div class="highlight-body">
         <h4>量身定制節目</h4>
         <p>為學校、機構等活動打造獨一無二的主題魔術表演，完美契合不同需求與場景。</p>
       </div>
     </div>
     <div class="highlight-item">
-      <div class="highlight-emoji">🎈</div>
+      <div class="highlight-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+      </div>
       <div class="highlight-body">
         <h4>扭氣球 + 活動主持</h4>
         <p>魔術師不僅技藝精湛，更擅長扭氣球、帶動氣氛與活動主持，從細節開始為您的活動增添色彩！</p>
@@ -932,19 +953,19 @@
     </div>
   </div>
 </section>
-<!-- 💡 請用這一整塊「三文章升級版攻略指南」取代舊的虛線盒子區塊 💡 -->
+
 <div style="background: #FFF0F5; padding: 25px 20px; border-radius: 12px; margin: 25px auto; max-width: 800px; border: 1px dashed #FF6B9D;">
-  <p style="text-align: center; font-weight: bold; margin-bottom: 15px; color: #9B59B6; font-size: 16px;">💡 澳門家長必讀·生日會籌辦與避坑攻略：</p>
+  <p style="text-align: center; font-weight: bold; margin-bottom: 15px; color: #9B59B6; font-size: 16px;">澳門家長必讀 · 生日會籌辦與避坑攻略：</p>
   <ul style="list-style: none; padding: 0; text-align: left; max-width: 650px; margin: 0 auto; line-height: 2;">
-    <li style="margin-bottom: 8px;">🚨 <a href="blog-legal-risks.html" style="color: var(--pink); font-weight: bold; text-decoration: underline;">【法律陷阱】網購跨境表演變「請黑工」？拆解澳門生日會的法律風險！</a></li>
-    <li style="margin-bottom: 8px;">🔥 <a href="blog-no-games.html" style="color: var(--pink); font-weight: bold; text-decoration: underline;">【省心心法】為什麼聰明父母辦生日會不玩遊戲，直接請魔術？</a></li>
-    <li style="margin-bottom: 8px;">✨ <a href="blog-birthday-magic.html" style="color: var(--pink); font-weight: bold; text-decoration: underline;">【節目推薦】為什麼「魔術表演」是澳門兒童生日派對上最受歡迎的節目？</a></li>
+    <li style="margin-bottom: 8px;"><span style="color: #9B59B6; font-weight: bold; margin-right: 4px;">[法律風險]</span> <a href="blog-legal-risks.html" style="color: var(--pink); font-weight: bold; text-decoration: underline;">網購跨境表演變「請黑工」？拆解澳門生日會的法律風險！</a></li>
+    <li style="margin-bottom: 8px;"><span style="color: var(--pink); font-weight: bold; margin-right: 4px;">[省心心法]</span> <a href="blog-no-games.html" style="color: var(--pink); font-weight: bold; text-decoration: underline;">為什麼聰明父母辦生日會不玩遊戲，直接請魔術？</a></li>
+    <li style="margin-bottom: 8px;"><span style="color: var(--pink); font-weight: bold; margin-right: 4px;">[節目推薦]</span> <a href="blog-birthday-magic.html" style="color: var(--pink); font-weight: bold; text-decoration: underline;">為什麼「魔術表演」是澳門兒童生日派對上最受歡迎的節目？</a></li>
   </ul>
 </div>
 
 
 <section class="video-section reveal" id="video">
-  <h2 class="section-title">🎬 精彩片段</h2>
+  <h2 class="section-title">精彩片段</h2>
   <p class="section-sub">看看小朋友的真實反應</p>
   <div class="video-wrapper">
     <iframe
@@ -958,7 +979,7 @@
 </section>
 
 <section class="gallery-section reveal" id="gallery">
-  <h2 class="section-title">📸 演出精華</h2>
+  <h2 class="section-title">演出精華</h2>
   <p class="section-sub">每一張都是真實的歡笑與驚喜</p>
   <div class="gallery-grid">
     <img src="images/4.jpg" alt="Billy Kong 生日派對魔術表演" loading="lazy">
@@ -986,7 +1007,7 @@
 </section>
 
 <section class="pricing-section reveal" id="pricing">
-  <h2 class="section-title">💰 服務套餐</h2>
+  <h2 class="section-title">服務套餐</h2>
   <p class="section-sub">澳門幣 · 全包服務 · 無隱藏收費</p>
 
   <div class="pricing-cards">
@@ -1005,20 +1026,16 @@
       </div>
     </div>
 
-        <!-- 💡 修改後的中文版完美對齊寫法 -->
     <div class="pricing-card featured">
-      <!-- 1. 讓最受歡迎標籤單獨在最上面一橫排（已同步英文版：淺灰底、深色字） -->
-      <div style="background: #EAEAEA; text-align: center; padding: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; color: #333333;">
-        🔥 最受歡迎 ⭐⭐⭐⭐⭐
+      <div style="background: #EAEAEA; text-align: center; padding: 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: #444444; text-transform: uppercase;">
+        RECOMMENDED
       </div>
 
-      <!-- 2. 下方的名稱與價格完美並排，絕不走位 -->
       <div class="pricing-header">
         <div class="pricing-name">1小時套餐</div>
         <div class="pricing-price">MOP $2,000</div>
       </div>
       <div class="pricing-body">
-
         <ul class="pricing-items">
           <li>魔術表演 35 分鐘</li>
           <li>帶領切蛋糕儀式 10 分鐘</li>
@@ -1046,7 +1063,9 @@
   </div>
 
   <div class="gift-highlight">
-    <div class="gift-icon">🎁</div>
+    <div class="gift-icon-box">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+    </div>
     <div class="gift-text">
       <strong>魔術小禮物 · MOP $30 / 份</strong>
       <span>含魔術小道具一件，現場演示及教學（需提前兩星期訂購）</span>
@@ -1054,7 +1073,7 @@
   </div>
 
   <div class="notes-box">
-    <div class="notes-title">📋 特別備注</div>
+    <div class="notes-title">特別備注</div>
     <ul class="notes-list">
       <li>建議 4 歲以上的小朋友參與</li>
       <li>表演以廣東話為主；如需英語或普通話表演，另加 MOP $500</li>
@@ -1063,13 +1082,12 @@
     </ul>
   </div>
 </section>
-<!-- ==================== FAQ 常見問題區塊開始 ==================== -->
+
 <section class="faq-section reveal" id="faq" style="padding: 40px 20px; background: #ffffff;">
   <div style="max-width: 800px; margin: 0 auto;">
-    <h2 class="section-title">🎪 常見問題 (FAQ)</h2>
+    <h2 class="section-title">常見問題 (FAQ)</h2>
     <p class="section-sub">家長最常問的魔法小解答</p>
     
-    <!-- 分類 1 -->
     <h3 class="faq-category">【關於表演與年齡】</h3>
     
     <details class="faq-item">
@@ -1099,7 +1117,6 @@
         </div>
     </details>
 
-    <!-- 分類 2 -->
     <h3 class="faq-category">【關於場地與準備】</h3>
 
     <details class="faq-item">
@@ -1117,7 +1134,6 @@
         </div>
     </details>
 
-    <!-- 分類 3 -->
     <h3 class="faq-category">【關於語言、收費與預訂】</h3>
 
     <details class="faq-item">
@@ -1149,7 +1165,6 @@
   </div>
 </section>
 
-<!-- FAQ 專屬美化樣式 -->
 <style>
   .faq-category {
       font-size: 16px;
@@ -1169,13 +1184,11 @@
       transition: all 0.3s ease;
       box-shadow: 0 2px 8px rgba(0,0,0,0.02);
   }
-  /* 當該問題被打開時的樣式 */
   .faq-item[open] {
       border-color: var(--pink);
       box-shadow: var(--shadow);
   }
   .faq-question {
-      /* 💡 核心修正：右邊內縮加大到 50px，確保文字絕對不會壓到加號 */
       padding: 16px 50px 16px 20px; 
       font-size: 15px;
       font-weight: 700;
@@ -1187,7 +1200,6 @@
   .faq-question::-webkit-details-marker {
       display: none;
   }
-  /* 右側 ＋ 號 */
   .faq-question::after {
       content: '＋';
       position: absolute;
@@ -1198,7 +1210,6 @@
       font-weight: normal;
       transition: transform 0.3s ease;
   }
-  /* 打開時變 － 號 */
   .faq-item[open] .faq-question::after {
       content: '－';
       color: var(--pink);
@@ -1219,30 +1230,37 @@
   }
 </style>
 
-<!-- ==================== FAQ 常見問題區塊結束 ==================== -->
 
 <section class="why-section reveal">
-  <h2 class="section-title">💕 家長這樣說</h2>
+  <h2 class="section-title">家長真實評價</h2>
   <p class="section-sub">真實的笑聲是最好的評價</p>
 
   <div class="why-cards">
     <div class="why-card">
-      <span class="why-card-icon">🏆</span>
+      <span class="why-card-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+      </span>
       <div class="why-card-title">經驗豐富</div>
       <div class="why-card-desc">多年舞台經驗，靈活應對各種場合，效果有保障</div>
     </div>
     <div class="why-card">
-      <span class="why-card-icon">👨‍👩‍👧</span>
+      <span class="why-card-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"></path><path d="M12 14c2.67 0 8 1.34 8 4v2H4v-2cc0-2.66 5.33-4 8-4z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      </span>
       <div class="why-card-title">闔家共賞</div>
       <div class="why-card-desc">魔術不只是視覺享受，更是連結情感的歡樂媒介</div>
     </div>
     <div class="why-card">
-      <span class="why-card-icon">🙋</span>
+      <span class="why-card-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+      </span>
       <div class="why-card-title">高互動性</div>
       <div class="why-card-desc">讓每位觀眾都有機會參與其中，感受魔法魅力</div>
     </div>
     <div class="why-card">
-      <span class="why-card-icon">💝</span>
+      <span class="why-card-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      </span>
       <div class="why-card-title">量身定制</div>
       <div class="why-card-desc">根據派對主題和孩子喜好，設計專屬表演內容</div>
     </div>
@@ -1250,17 +1268,19 @@
 
   <div class="why-quote">
     <p>孩子的生日一年只有一次，我們理解您希望讓這天變得特別而難忘。我們的魔術廣受家長歡迎，透過參與感滿分的表演，為小主角與來賓創造閃閃發光的回憶。</p>
-    <strong>選擇我們，讓魔法幕後不僅僅是表演，更是滿載歡笑與溫馨的派對體驗！ 🎪</strong>
+    <strong>選擇我們，讓魔法幕後不僅僅是表演，更是滿載歡笑與溫馨的派對體驗！</strong>
   </div>
 </section>
 
 <section class="contact-section reveal" id="contact">
-  <h2 class="section-title">📬 立即查詢</h2>
+  <h2 class="section-title">立即查詢</h2>
   <p class="section-sub">告訴我們派對日期，我們為您量身安排！</p>
 
   <div class="contact-cards">
     <a href="https://wa.me/85366551654?text=你好！我想查詢親子派對魔術表演，請問有以下日期空檔嗎？" class="contact-card" target="_blank">
-      <div class="contact-card-icon cc-wa">💬</div>
+      <div class="contact-card-icon cc-wa">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+      </div>
       <div class="contact-card-body">
         <strong>WhatsApp 查詢</strong>
         <span>點擊即可發送訊息</span>
@@ -1269,7 +1289,9 @@
     </a>
 
     <a href="weixin://dl/chat?Billykongmagic" class="contact-card">
-      <div class="contact-card-icon cc-wc">🟢</div>
+      <div class="contact-card-icon cc-wc">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      </div>
       <div class="contact-card-body">
         <strong>微信查詢</strong>
         <span>微信 ID：Billykongmagic</span>
@@ -1278,7 +1300,9 @@
     </a>
 
     <a href="tel:+85366551654" class="contact-card">
-      <div class="contact-card-icon cc-ph">📞</div>
+      <div class="contact-card-icon cc-ph">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      </div>
       <div class="contact-card-body">
         <strong>電話查詢</strong>
         <span>+853 6655 1654</span>
@@ -1290,7 +1314,7 @@
   <div class="contact-note">
     <p>
       查詢時請告知：<strong>活動日期 · 地點 · 人數 · 主角年齡</strong><br>
-      我們將盡快回覆並為您報價 🎩
+      我們將盡快回覆並為您報價
     </p>
   </div>
 </section>
@@ -1304,7 +1328,9 @@
 </footer>
 
 <div class="lightbox" id="lightbox">
-  <div class="lightbox-close">✕</div>
+  <div class="lightbox-close">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </div>
   <img id="lightbox-img" src="" alt="演出照片">
 </div>
 
@@ -1336,7 +1362,7 @@
       });
     });
 
-    // 點擊背景或關閉按鈕時關閉燈箱（防止點擊圖片主體誤關）
+    // 點擊背景或關閉按鈕時關閉燈箱
     lightbox.addEventListener('click', (e) => {
       if (e.target !== lightboxImg) {
         lightbox.classList.remove('active');
